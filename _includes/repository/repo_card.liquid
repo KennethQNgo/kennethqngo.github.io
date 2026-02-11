@@ -1,0 +1,44 @@
+{% assign repo = include.repository %}
+{% assign api = site.data.repo_api[repo.slug] %}
+{% assign parts = repo.slug | split: '/' %}
+{% assign owner = parts[0] %}
+{% assign name = parts[1] %}
+{% assign repo_url = api.html_url | default: 'https://github.com/' | append: repo.slug %}
+{% assign summary = repo.summary | default: api.description %}
+
+<a class="repo-card" href="{{ repo_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open {{ repo.slug }}">
+  <div class="repo-card-head">
+    <p class="repo-owner">{{ owner }}</p>
+    {% if repo.status %}
+      <span class="repo-status-chip">{{ repo.status }}</span>
+    {% endif %}
+  </div>
+
+  <h3 class="repo-card-title">{{ name }}</h3>
+
+  {% if summary %}
+    <p class="repo-summary">{{ summary }}</p>
+  {% endif %}
+
+  {% if repo.stack and repo.stack.size > 0 %}
+    <div class="repo-stack-list">
+      {% for item in repo.stack %}
+        <span class="repo-stack-chip">{{ item }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="repo-meta-row">
+    {% if api.stargazers_count != nil %}
+      <span>★ {{ api.stargazers_count }}</span>
+    {% endif %}
+    {% if api.language %}
+      <span>{{ api.language }}</span>
+    {% endif %}
+    {% if api.updated_at %}
+      <span>Updated {{ api.updated_at | date: "%b %Y" }}</span>
+    {% endif %}
+  </div>
+
+  <p class="repo-card-cta">Open project</p>
+</a>

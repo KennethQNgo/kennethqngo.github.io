@@ -1,8 +1,22 @@
-github_users:
-  - kennethqngo
+profile:
+  username: KennethQNgo
+  intro: >
+    Biochemistry background, computational chemistry focus, and hands-on software projects.
+    This page highlights practical tools and experiments I am actively building.
 
-repo_description_lines_max: 2
+repositories:
+  - slug: KennethQNgo/mdcourse.github.io
+    summary: >
+      A course website focused on practical molecular dynamics workflows, designed to make
+      technical content easier to navigate and learn from.
+    stack: [Jekyll, Markdown, HTML, CSS]
+    status: Active
+    priority: 1
 
-github_repos:
-  - KennethQNgo/mdcourse.github.io
-  - KennethQNgo/OUTPUT-file-data-extraction
+  - slug: KennethQNgo/OUTPUT-file-data-extraction
+    summary: >
+      A parser and extraction workflow for simulation output files that streamlines turning
+      raw results into analysis-ready datasets.
+    stack: [Python, Data Parsing, Scientific Computing]
+    status: Maintaining
+    priority: 2

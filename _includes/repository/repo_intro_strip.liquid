@@ -1,0 +1,21 @@
+{% assign profile = site.data.repositories.profile %}
+{% assign profile_api = site.data.repo_profile_api %}
+
+<section class="repo-intro-strip" aria-label="GitHub profile summary">
+  <a class="repo-intro-link" href="https://github.com/{{ profile.username }}" target="_blank" rel="noopener noreferrer">
+    <div class="repo-intro-identity">
+      <h2>{{ profile_api.name | default: profile.username }}</h2>
+      <p class="repo-intro-handle">@{{ profile.username }}</p>
+    </div>
+    <p class="repo-intro-text">{{ profile.intro | default: profile_api.bio }}</p>
+    <div class="repo-intro-metrics">
+      {% if profile_api.public_repos %}
+        <span class="repo-metric"><strong>{{ profile_api.public_repos }}</strong> repos</span>
+      {% endif %}
+      {% if profile_api.followers %}
+        <span class="repo-metric"><strong>{{ profile_api.followers }}</strong> followers</span>
+      {% endif %}
+      <span class="repo-intro-cta">View GitHub profile</span>
+    </div>
+  </a>
+</section>

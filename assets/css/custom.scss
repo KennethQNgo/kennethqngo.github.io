@@ -362,3 +362,201 @@ button:focus-visible,
     transform: none;
   }
 }
+
+/* Repositories page revamp */
+.revamp-repositories {
+  font-family: var(--custom-font-body);
+}
+
+.revamp-repositories h2 {
+  font-family: var(--custom-font-heading);
+  font-size: clamp(1.45rem, 1.22rem + 0.55vw, 1.95rem);
+  margin-bottom: var(--custom-space-2);
+}
+
+.repo-intro-strip {
+  margin-bottom: var(--custom-space-5);
+}
+
+.repo-intro-link {
+  display: block;
+  text-decoration: none;
+  background: #111111;
+  border: 1px solid var(--custom-border);
+  border-radius: var(--custom-radius-lg);
+  padding: var(--custom-space-4);
+  box-shadow: var(--custom-shadow-sm);
+  transition:
+    transform var(--custom-speed-base) var(--custom-ease),
+    box-shadow var(--custom-speed-base) var(--custom-ease),
+    border-color var(--custom-speed-base) var(--custom-ease);
+}
+
+.repo-intro-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--custom-shadow-md);
+  border-color: #3a3a3a;
+}
+
+.repo-intro-identity {
+  display: flex;
+  align-items: baseline;
+  gap: var(--custom-space-2);
+}
+
+.repo-intro-identity h2 {
+  margin: 0;
+}
+
+.repo-intro-handle {
+  margin: 0;
+  color: var(--custom-text-soft);
+  font-family: var(--custom-font-heading);
+  font-size: 0.95rem;
+}
+
+.repo-intro-text {
+  margin-top: var(--custom-space-2);
+  margin-bottom: var(--custom-space-3);
+  color: var(--custom-text);
+  line-height: 1.7;
+}
+
+.repo-intro-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--custom-space-2);
+  align-items: center;
+}
+
+.repo-metric {
+  font-family: var(--custom-font-heading);
+  color: var(--custom-text-soft);
+  border: 1px solid var(--custom-border);
+  border-radius: 999px;
+  padding: 0.22rem 0.65rem;
+  font-size: 0.86rem;
+}
+
+.repo-intro-cta {
+  margin-left: auto;
+  font-family: var(--custom-font-heading);
+  color: var(--custom-accent);
+  font-size: 0.9rem;
+}
+
+.repo-projects-subtitle {
+  color: var(--custom-text-soft);
+  margin-bottom: var(--custom-space-4);
+}
+
+.repo-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--custom-space-4);
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  background: #111111;
+  border: 1px solid var(--custom-border);
+  border-radius: var(--custom-radius-lg);
+  box-shadow: var(--custom-shadow-sm);
+  text-decoration: none;
+  padding: var(--custom-space-4);
+  transition:
+    transform var(--custom-speed-base) var(--custom-ease),
+    box-shadow var(--custom-speed-base) var(--custom-ease),
+    border-color var(--custom-speed-base) var(--custom-ease);
+}
+
+.repo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--custom-shadow-md);
+  border-color: #3d3d3d;
+}
+
+.repo-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--custom-space-2);
+}
+
+.repo-owner {
+  margin: 0;
+  font-family: var(--custom-font-heading);
+  font-size: 0.86rem;
+  color: var(--custom-text-soft);
+}
+
+.repo-status-chip {
+  border: 1px solid var(--custom-border);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  background: #1d1a14;
+  color: #e1c9a4;
+  font-family: var(--custom-font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.repo-card-title {
+  margin: 0 0 var(--custom-space-2) 0;
+  font-family: var(--custom-font-heading);
+  font-size: clamp(1.2rem, 1.04rem + 0.35vw, 1.45rem);
+  color: var(--custom-text);
+}
+
+.repo-summary {
+  margin: 0 0 var(--custom-space-3) 0;
+  color: var(--custom-text);
+  line-height: 1.72;
+  font-size: 1.02rem;
+}
+
+.repo-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: var(--custom-space-3);
+}
+
+.repo-stack-chip {
+  border: 1px solid var(--custom-border);
+  border-radius: 999px;
+  padding: 0.16rem 0.55rem;
+  font-size: 0.78rem;
+  font-family: var(--custom-font-heading);
+  color: var(--custom-text-soft);
+}
+
+.repo-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: var(--custom-text-soft);
+  font-family: var(--custom-font-heading);
+  font-size: 0.83rem;
+  margin-top: auto;
+}
+
+.repo-card-cta {
+  margin: var(--custom-space-2) 0 0 0;
+  font-family: var(--custom-font-heading);
+  color: var(--custom-accent);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .repo-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repo-intro-cta {
+    margin-left: 0;
+  }
+}
