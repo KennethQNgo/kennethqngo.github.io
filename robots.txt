@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://kennethqngo.github.io/sitemap.xml
+Sitemap: https://kenneth-ngo.com/sitemap.xml
