@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="post revamp-home">
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
@@ -14,7 +14,7 @@ layout: default
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 
-  <article>
+  <article class="home-content">
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}

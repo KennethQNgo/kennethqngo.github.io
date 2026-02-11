@@ -16,7 +16,9 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body
+    class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %} layout-{{ page.layout | default: 'default' }}{% if page.permalink == '/' %} page-home{% endif %}"
+  >
     <!-- Header -->
     {% include header.liquid %}
 
@@ -73,5 +75,6 @@
     {% include scripts/jekyll_tabs.liquid %}
     {% include scripts/back_to_top.liquid %}
     {% include scripts/search.liquid %}
+    {% include scripts/custom.liquid %}
   </body>
 </html>

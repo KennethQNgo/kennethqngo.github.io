@@ -16,10 +16,12 @@ pagination:
     after: 3 # The number of links after the current page
 ---
 
-<div class="post">
+<div class="post revamp-blog">
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}
+{% assign display_tags_size = site.display_tags | size %}
+{% assign display_categories_size = site.display_categories | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
 
@@ -29,7 +31,7 @@ pagination:
   </div>
   {% endif %}
 
-{% if site.display_tags or site.display_categories %}
+{% if display_tags_size > 0 or display_categories_size > 0 %}
 
   <div class="tag-category-list">
     <ul class="p-0 m-0">
@@ -41,7 +43,7 @@ pagination:
           <p>&bull;</p>
         {% endunless %}
       {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
+      {% if display_categories_size > 0 and display_tags_size > 0 %}
         <p>&bull;</p>
       {% endif %}
       {% for category in site.display_categories %}
@@ -64,7 +66,7 @@ pagination:
 {% assign is_even = featured_posts.size | modulo: 2 %}
 <div class="row row-cols-{% if featured_posts.size <= 2 or is_even == 0 %}2{% else %}3{% endif %}">
 {% for post in featured_posts %}
-<div class="col mb-4">
+<div class="col mb-4 blog-featured-item">
 <a href="{{ post.url | relative_url }}">
 <div class="card hoverable">
 <div class="row g-0">
@@ -120,7 +122,7 @@ pagination:
     {% assign tags = post.tags | join: "" %}
     {% assign categories = post.categories | join: "" %}
 
-    <li>
+    <li class="blog-list-item">
 
 {% if post.thumbnail %}
 
